@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geometry Genius</title>
-    
+    <!-- Tailwind and daisyUI cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- inter fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- styles -->
+    <style>
+        .inter {
+            font-family: "Inter", sans-serif;
+        }
+    </style>
 </head>
-<body>
-    
+<body class="inter m-6">
+    <header class="container mx-auto">
+        <div class="navbar bg-[#77b6db32] rounded-lg justify-between px-10 h-[130px]">
+            <div class="block">
+                <h3 class="font-bold text-4xl text-[#111111]">Interactive</h3>
+                <p class="font-medium text-3xl text-[#111111] mb-3">Geometry Genius</p>
+            </div>
+            <button class="btn bg-[#1090D8] rounded-lg text-[#FFFFFF]">Blog</button>
+        </div>
+    </header>
+    <main class="container mx-auto mt-6">
+        <!-- main content container -->
+         <div class="flex flex-col md:flex-row gap-6">
+            <!-- Shape card container -->
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
+                <!-- Triangle -->
+                <div class="card  bg-[#FBBCED] shadow-xl">
+                    <figure>
+                      <img
+                        src="images/triangle.png"
+                        alt="Shoes" class="w-48 mt-7" />
+                    </figure>
+                    <div class="card-body text-center">
+                      <h2 class="font-bold text-2xl text-[#414141]">Triangle</h2>
+                      <p class="font-normal text-base text-[#414141]">Area(A) = 0.5 X b X h</p>
+                      <div>
+                        <p class="font-normal text-xl text-[#414141]">Area: <span id="triangle-area"></span> <span>cm<sup>2</sup></span></p>
+                      </div>
+                      <div class="flex">
+                        <input id="triangle-base" type="text" placeholder="b" class="w-20 rounded font-normal text-base text-[#414141] p-2">
+                      <span class="ml-2 mr-2">cm</span>
+                      <input id="triangle-height" type="text" placeholder="h" class="w-20 p-2 rounded font-normal text-base text-[#414141]">
+                      <span class="ml-2">cm</span>
+                      </div>
+                      <div class="card-actions">
+                        <button onclick="calculateTriangleArea()" class="btn btn-primary mt-3 font-bold text-xl text-[#FFFFFF] w-full">Calculate</button>
+                      </div>
+                    </div>
+                  </div>
+                <!-- Rectangle -->
+                <div class="card bg-[#e6e4e4] shadow-xl">
+                    <figure>
+                      <img
+                        src="images/rectangle.png"
+                        alt="Shoes" class="w-56 mt-8" />
+                    </figure>
+                    <div class="card-body text-center">
+                      <h2 class="font-bold text-2xl text-[#414141]">Rectangle</h2>
+                      <p class="font-normal text-base text-[#414141]">Area(A) = W X I</p>
+                      <div class="flex">
+                        <input type="text" placeholder="W" class="w-20 rounded font-normal text-base text-[#414141] p-2">
+                      <span class="ml-2 mr-2">cm</span>
+                      <input type="text" placeholder="I" class="w-20 p-2 rounded font-normal text-base text-[#414141]">
+                      <span class="ml-2">cm</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn btn-primary mt-3 font-bold text-xl text-[#FFFFFF] w-full">Calculate</button>
+                      </div>
+                    </div>
+                  </div>
+                <!-- Parallelogram -->
+                <div class="card  bg-[#f3eef2] shadow-xl">
+                    <figure>
+                      <img
+                        src="images/parallelogram.png"
+                        alt="Shoes" class="w-56 mt-10" />
+                    </figure>
+                    <div class="card-body text-center">
+                      <h2 class="font-bold text-2xl text-[#414141]">Parallelogram</h2>
+                      <p class="font-normal text-base text-[#414141]">Area(A) = b X h </p>
+                      <p class="font-normal text-base text-[#414141] mb-8">b= 10cm,
+                        <span>h=12cm</span>
+                      </p>
+                      <div class="card-actions">
+                        <button class="btn btn-primary mt-3 font-bold text-xl text-[#FFFFFF] w-full">Calculate</button>
+                      </div>
+                    </div>
+                  </div>
+             </div>
+             <!-- Area Calculation container -->
+              <div class="w-80 rounded-lg border ">
+                <h3 class="font-bold text-xl text-[#111111] text-center mt-7 underline">Area Calculation</h3>
+              </div>
+         </div>
+    </main>
+    <script src="Scripts/triangle.js"></script>
 </body>
 </html>
